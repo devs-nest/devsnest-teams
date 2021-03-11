@@ -7,7 +7,6 @@ function Header() {
         <div className={styles.Header}>
             <img src={logo} alt="Logo"/>
             <div className={styles.title}>Devsnest Teams</div>
-            <img src={logo} alt="Logo"/>
         </div>
     )
 }
