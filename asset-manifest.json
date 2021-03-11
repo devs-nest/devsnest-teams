@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/devsnest-teams/static/css/main.f27ccd72.chunk.css",
-    "main.js": "/devsnest-teams/static/js/main.0e6b7b9b.chunk.js",
-    "main.js.map": "/devsnest-teams/static/js/main.0e6b7b9b.chunk.js.map",
+    "main.css": "/devsnest-teams/static/css/main.eca74ee3.chunk.css",
+    "main.js": "/devsnest-teams/static/js/main.8294613f.chunk.js",
+    "main.js.map": "/devsnest-teams/static/js/main.8294613f.chunk.js.map",
     "runtime-main.js": "/devsnest-teams/static/js/runtime-main.36a62a0b.js",
     "runtime-main.js.map": "/devsnest-teams/static/js/runtime-main.36a62a0b.js.map",
     "static/js/2.1ed76b2a.chunk.js": "/devsnest-teams/static/js/2.1ed76b2a.chunk.js",
@@ -10,14 +10,14 @@
     "static/js/3.e8cb5cd0.chunk.js": "/devsnest-teams/static/js/3.e8cb5cd0.chunk.js",
     "static/js/3.e8cb5cd0.chunk.js.map": "/devsnest-teams/static/js/3.e8cb5cd0.chunk.js.map",
     "index.html": "/devsnest-teams/index.html",
-    "static/css/main.f27ccd72.chunk.css.map": "/devsnest-teams/static/css/main.f27ccd72.chunk.css.map",
+    "static/css/main.eca74ee3.chunk.css.map": "/devsnest-teams/static/css/main.eca74ee3.chunk.css.map",
     "static/js/2.1ed76b2a.chunk.js.LICENSE.txt": "/devsnest-teams/static/js/2.1ed76b2a.chunk.js.LICENSE.txt",
     "static/media/logo.c752fafb.jpg": "/devsnest-teams/static/media/logo.c752fafb.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.36a62a0b.js",
     "static/js/2.1ed76b2a.chunk.js",
-    "static/css/main.f27ccd72.chunk.css",
-    "static/js/main.0e6b7b9b.chunk.js"
+    "static/css/main.eca74ee3.chunk.css",
+    "static/js/main.8294613f.chunk.js"
   ]
 }
