@@ -1,15 +1,21 @@
 .Header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 1rem;
+    padding: 1rem 2rem;
     padding-bottom: 0.5rem;
     background-color: white;
     box-shadow: 3px 0 5px gray;
+    color: #9c85d2;
+}
+
+.left {
+    display: flex;
+    align-items: center;
 }
 
 .Header img {
@@ -20,5 +26,26 @@
 .Header .title {
     font-size: 2rem;
     font-weight: bold;
-    color: #9c85d2;
+    text-decoration: none;
+    color: inherit;
+}
+
+.Header .item {
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: inherit;
+}
+
+@media only screen and (max-width: 570px) {
+    .Header {
+        flex-direction: column;
+    }
+
+    .Header .title {
+        font-size: 1.3rem;
+    }
+
+    .Header .item {
+        font-size: 1rem;
+    }
 }

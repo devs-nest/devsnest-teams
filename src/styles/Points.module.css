@@ -1,0 +1,24 @@
+.Points {
+    background-color: #f2eff7;
+    min-height: 70vh;
+    padding: 1rem;
+    padding-top: 2rem;
+}
+
+.title {
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+ul li {
+    padding: 0.5rem;
+    font-size: 1.3rem;
+    list-style: none;
+}
+
+@media only screen and (max-width: 450px) {
+    ul li {
+        font-size: 1rem;
+    }
+}

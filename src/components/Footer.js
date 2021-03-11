@@ -29,8 +29,8 @@ function Footer() {
             </div>
 
             <div className={styles.source_code}>
-                <a href="https://github.com/sanjay270899/" target="_blank" rel="noopener noreferrer">
-                <FaGithub/>&nbsp;Developer
+                <a href="https://github.com/devs-nest" target="_blank" rel="noopener noreferrer">
+                <FaGithub/>&nbsp;GitHub
                 </a>
             </div>
         </div>
