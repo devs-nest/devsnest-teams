@@ -1,0 +1,27 @@
+.Footer {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.row {
+    margin: 0 0.3rem;
+}
+
+.email {
+    margin: 0.3rem 0;
+}
+
+.source_code a {
+    text-decoration: none;
+    color: tomato;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.source_code a:hover {
+    color: orangered;
+}

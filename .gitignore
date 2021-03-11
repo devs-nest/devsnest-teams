@@ -11,6 +11,10 @@
 # production
 /build
 
+# Data
+DevsnestTeams.xlsx
+script.js
+
 # misc
 .DS_Store
 .env.local
