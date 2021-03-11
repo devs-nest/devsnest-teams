@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/devsnest-teams/static/css/main.7cbd6b43.chunk.css",
-    "main.js": "/devsnest-teams/static/js/main.25e069ed.chunk.js",
-    "main.js.map": "/devsnest-teams/static/js/main.25e069ed.chunk.js.map",
-    "runtime-main.js": "/devsnest-teams/static/js/runtime-main.9f566193.js",
-    "runtime-main.js.map": "/devsnest-teams/static/js/runtime-main.9f566193.js.map",
-    "static/js/2.44797b6a.chunk.js": "/devsnest-teams/static/js/2.44797b6a.chunk.js",
-    "static/js/2.44797b6a.chunk.js.map": "/devsnest-teams/static/js/2.44797b6a.chunk.js.map",
-    "static/js/3.581e3e38.chunk.js": "/devsnest-teams/static/js/3.581e3e38.chunk.js",
-    "static/js/3.581e3e38.chunk.js.map": "/devsnest-teams/static/js/3.581e3e38.chunk.js.map",
+    "main.css": "/devsnest-teams/static/css/main.f27ccd72.chunk.css",
+    "main.js": "/devsnest-teams/static/js/main.0e6b7b9b.chunk.js",
+    "main.js.map": "/devsnest-teams/static/js/main.0e6b7b9b.chunk.js.map",
+    "runtime-main.js": "/devsnest-teams/static/js/runtime-main.36a62a0b.js",
+    "runtime-main.js.map": "/devsnest-teams/static/js/runtime-main.36a62a0b.js.map",
+    "static/js/2.1ed76b2a.chunk.js": "/devsnest-teams/static/js/2.1ed76b2a.chunk.js",
+    "static/js/2.1ed76b2a.chunk.js.map": "/devsnest-teams/static/js/2.1ed76b2a.chunk.js.map",
+    "static/js/3.e8cb5cd0.chunk.js": "/devsnest-teams/static/js/3.e8cb5cd0.chunk.js",
+    "static/js/3.e8cb5cd0.chunk.js.map": "/devsnest-teams/static/js/3.e8cb5cd0.chunk.js.map",
     "index.html": "/devsnest-teams/index.html",
-    "static/css/main.7cbd6b43.chunk.css.map": "/devsnest-teams/static/css/main.7cbd6b43.chunk.css.map",
-    "static/js/2.44797b6a.chunk.js.LICENSE.txt": "/devsnest-teams/static/js/2.44797b6a.chunk.js.LICENSE.txt",
+    "static/css/main.f27ccd72.chunk.css.map": "/devsnest-teams/static/css/main.f27ccd72.chunk.css.map",
+    "static/js/2.1ed76b2a.chunk.js.LICENSE.txt": "/devsnest-teams/static/js/2.1ed76b2a.chunk.js.LICENSE.txt",
     "static/media/logo.c752fafb.jpg": "/devsnest-teams/static/media/logo.c752fafb.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.9f566193.js",
-    "static/js/2.44797b6a.chunk.js",
-    "static/css/main.7cbd6b43.chunk.css",
-    "static/js/main.25e069ed.chunk.js"
+    "static/js/runtime-main.36a62a0b.js",
+    "static/js/2.1ed76b2a.chunk.js",
+    "static/css/main.f27ccd72.chunk.css",
+    "static/js/main.0e6b7b9b.chunk.js"
   ]
 }
