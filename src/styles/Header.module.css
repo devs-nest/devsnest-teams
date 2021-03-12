@@ -34,11 +34,14 @@
     font-size: 1.3rem;
     text-decoration: none;
     color: inherit;
+    margin-left: 1.5rem;
+    white-space: nowrap;
 }
 
-@media only screen and (max-width: 570px) {
+@media only screen and (max-width: 750px) {
     .Header {
         flex-direction: column;
+        padding: 0.5rem;
     }
 
     .Header .title {

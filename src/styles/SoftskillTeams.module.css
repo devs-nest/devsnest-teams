@@ -1,0 +1,51 @@
+.SoftskillTeams {
+    background-color: #f2eff7;
+    min-height: 70vh;
+    padding: 1rem;
+    padding-top: 2rem;
+}
+
+.title {
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+    justify-content: center;
+}
+
+.card {
+    background-color: white;
+    width: fit-content;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgb(0 0 0 / 20%);
+}
+
+.card table {
+    border-collapse: separate;
+    border-spacing: 0.3rem;
+}
+
+.card td, .card th {
+    background-color: whitesmoke;
+    padding: 0.3rem;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+@media only screen and (max-width: 350px) {
+    .cards {
+        padding: 0;
+    }
+
+    .card {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+}

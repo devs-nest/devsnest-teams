@@ -17,6 +17,12 @@ function Header() {
                 >
                     Important Points
                 </Link>
+                <Link
+                    to="/softskill_teams"
+                    className={styles.item}
+                >
+                    Softskill Teams
+                </Link>
             </div>
         </div>
     )

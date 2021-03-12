@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from '../styles/TeamPage.module.css';
-import data from './data';
+import data from '../assets/data/data';
 
 function TeamPage() {
 
