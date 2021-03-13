@@ -31,6 +31,14 @@ function TeamPage() {
                                 <td>Team Name</td>
                                 <td>{team.name}</td>
                             </tr>
+                            <tr className={styles.name}>
+                                <td>Leader</td>
+                                <td>{team.leader}</td>
+                            </tr>
+                            <tr className={styles.name}>
+                                <td>Vice Leader</td>
+                                <td>{team.viceLeader ? team.viceLeader : <span style={{color: "red"}}>Not Assigned</span>}</td>
+                            </tr>
                             <tr className={styles.members}>
                                 <td>Team Members</td>
                                 <td>
