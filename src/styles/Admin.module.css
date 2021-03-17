@@ -1,0 +1,65 @@
+.Admin {
+    background-color: #f2eff7;
+    min-height: 70vh;
+    padding: 1rem;
+    padding-top: 2rem;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.total_students {
+    margin: 1rem 0;
+}
+
+.data {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.user {
+    background-color: white;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgb(0 0 0 / 20%);
+}
+
+.user table {
+    border-collapse: separate;
+    border-spacing: 0.3rem;
+}
+
+.user_name {
+    font-weight: bold;
+}
+
+.user_data {
+    margin: 11px;
+}
+
+.user_data td {
+    border: 1px solid gray;
+    padding: 0.3rem 0.5rem;
+    background-color: whitesmoke;
+    border-radius: 5px;
+}
+
+.user table tbody tr:last-child td {
+    background-color: rgba(128, 0, 128, 0.7);
+    color: white;
+    font-weight: bold;
+}
+
+.plus {
+    background-color: rgba(0, 128, 0, 0.7) !important;
+    color: white;
+}
+
+.minus {
+    background-color: rgba(255, 0, 0, 0.9) !important;
+    color: white;
+}

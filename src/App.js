@@ -1,4 +1,7 @@
 import { HashRouter as Router, Route } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Admin from './components/Admin';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Points from './components/Points';
@@ -6,6 +9,9 @@ import SoftskillTeams from './components/SoftskillTeams';
 import TeamPage from './components/TeamPage';
 
 function App() {
+
+  toast.configure();
+
   return (
     <div className="App">
       <Router>
@@ -18,6 +24,9 @@ function App() {
         </Route>
         <Route exact path='/softskill_teams'>
           <SoftskillTeams/>
+        </Route>
+        <Route exact path='/admin/:username/:password'>
+          <Admin/>
         </Route>
         <Footer/>
       </Router>
