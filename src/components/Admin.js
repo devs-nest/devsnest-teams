@@ -1,32 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styles from '../styles/Admin.module.css';
 import axios from 'axios';
-import { useHistory, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import urls from '../config.js';
 import { FaPlus, FaMinus } from 'react-icons/fa';
 
 function Admin() {
 
-    const history = useHistory();
-    const params = useParams();
-
     const [isLoading, setIsLoading] = useState(false);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [buttonIsLoading, setButtonIsLoading] = useState(false);
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
     const [users, setUsers] = useState([]);
-    
-    useEffect(() => {
-        checkAuthentication();
-    }, []);
 
     async function checkAuthentication() {
         setIsLoading(true);
         try {
-            const {data} = await axios.post('http://localhost:5000/api/v1/admin/check-password', {
-                username: params.username,
-                password: params.password
+            const {data} = await axios.post(urls.checkPassword, {
+                username: username,
+                password: password
             });
             toast.success(data.message);
             setIsLoading(false);
+            setIsAuthenticated(true);
             fetchData();
         } catch(error) {
             if(error.response) {
@@ -39,14 +36,13 @@ function Admin() {
                 // console.log(error.message);
             }
             setIsLoading(false);
-            history.push('/');
         }
     }
 
     async function fetchData() {
         setIsLoading(true);
         try {
-            const {data} = await axios.get('http://localhost:5000/api/v1/softskill/get-users');
+            const {data} = await axios.get(urls.getUsers);
             // console.log(data);
             toast.info(data.message);
             setUsers(data.data);
@@ -68,12 +64,12 @@ function Admin() {
     async function updateScore(username, type, tag) {
         try {
             setButtonIsLoading(true);
-            const {data} = await axios.post('http://localhost:5000/api/v1/softskill/update-score', {
+            const {data} = await axios.post(urls.updateSore, {
                 username,
                 type,
                 tag
             });
-            console.log(data);
+            // console.log(data);
             toast.info(data.message);
             
             let updatedUsers = users.map(user => {
@@ -104,6 +100,22 @@ function Admin() {
         return (
             <div className={styles.Admin}>
                 Loading...
+            </div>
+        )
+    }
+
+    if(!isAuthenticated) {
+        return (
+            <div className={styles.Admin}>
+                <div className={styles.title}>
+                    Softskill Admin Login
+                </div>
+
+                <div className={styles.login}>
+                    <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)}/>
+                    <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                    <button onClick={() => checkAuthentication()}>Login</button>
+                </div>
             </div>
         )
     }

@@ -23,6 +23,12 @@ function Header() {
                 >
                     Softskill Teams
                 </Link>
+                <Link
+                    to="/softskill_leaderboard"
+                    className={styles.item}
+                >
+                    Softskill Leaderboard
+                </Link>
             </div>
         </div>
     )

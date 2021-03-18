@@ -38,7 +38,7 @@
     white-space: nowrap;
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 980px) {
     .Header {
         flex-direction: column;
         padding: 0.5rem;
@@ -50,5 +50,16 @@
 
     .Header .item {
         font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 470px) {
+    .Header .right {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Header img {
+        width: 50px;
     }
 }

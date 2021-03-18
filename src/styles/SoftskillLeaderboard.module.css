@@ -1,4 +1,4 @@
-.Admin {
+.SoftskillLeaderboard {
     background-color: #f2eff7;
     min-height: 70vh;
     padding: 1rem;
@@ -8,43 +8,33 @@
 .title {
     font-size: 1.5rem;
     font-weight: bold;
-}
-
-.login {
-    display: flex;
-    flex-direction: column;
-    width: fit-content;
-    margin: 3rem auto;
-}
-
-.login button {
-    margin: 1rem 0;
-    border-radius: 15px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    border: none;
-    background-color: purple;
-    padding: 0.5rem;
-    color: white;
-}
-
-.total_students {
-    margin: 1rem 0;
+    margin-bottom: 1rem;
 }
 
 .data {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    flex-wrap: wrap;
 }
 
 .user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: white;
-    margin: 1rem;
+    margin: 1rem auto;
     padding: 1rem;
     border-radius: 15px;
     box-shadow: 0 0 20px rgb(0 0 0 / 20%);
+    width: fit-content;
+}
+
+.main {
+    display: flex;
+}
+
+.user:hover {
+    transform: scale(1.01);
 }
 
 .user table {
@@ -54,6 +44,7 @@
 
 .user_name {
     font-weight: bold;
+    width: 200px;
 }
 
 .user_data {
@@ -67,18 +58,33 @@
     border-radius: 5px;
 }
 
-.user table tbody tr:last-child td {
+.user table tbody tr td:last-child {
     background-color: rgba(128, 0, 128, 0.7);
     color: white;
     font-weight: bold;
 }
 
-.plus {
-    background-color: rgba(0, 128, 0, 0.7) !important;
-    color: white;
+@media only screen and (max-width: 1000px) {
+    .SoftskillLeaderboard {
+        font-size: 0.9rem;
+    }
+
+    .main {
+        flex-direction: column;
+    }
+
+    .user {
+        flex-direction: column;
+    }
 }
 
-.minus {
-    background-color: rgba(255, 0, 0, 0.9) !important;
-    color: white;
+@media only screen and (max-width: 375px) {
+    .user {
+        font-size: 0.7rem;
+        padding: 0.5rem;
+    }
+
+    .SoftskillLeaderboard {
+        padding: 1rem 0.5rem;
+    }
 }

@@ -5,6 +5,7 @@ import Admin from './components/Admin';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Points from './components/Points';
+import SoftskillLeaderboard from './components/SoftskillLeaderboard';
 import SoftskillTeams from './components/SoftskillTeams';
 import TeamPage from './components/TeamPage';
 
@@ -25,7 +26,10 @@ function App() {
         <Route exact path='/softskill_teams'>
           <SoftskillTeams/>
         </Route>
-        <Route exact path='/admin/:username/:password'>
+        <Route exact path='/softskill_leaderboard'>
+          <SoftskillLeaderboard/>
+        </Route>
+        <Route exact path='/admin'>
           <Admin/>
         </Route>
         <Footer/>
