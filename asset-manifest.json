@@ -1,26 +1,28 @@
 {
   "files": {
-    "main.css": "/devsnest-teams/static/css/main.17c913b1.chunk.css",
-    "main.js": "/devsnest-teams/static/js/main.70213740.chunk.js",
-    "main.js.map": "/devsnest-teams/static/js/main.70213740.chunk.js.map",
-    "runtime-main.js": "/devsnest-teams/static/js/runtime-main.1ce9cc51.js",
-    "runtime-main.js.map": "/devsnest-teams/static/js/runtime-main.1ce9cc51.js.map",
+    "main.css": "/devsnest-teams/static/css/main.91d99f70.chunk.css",
+    "main.js": "/devsnest-teams/static/js/main.2fa66936.chunk.js",
+    "main.js.map": "/devsnest-teams/static/js/main.2fa66936.chunk.js.map",
+    "runtime-main.js": "/devsnest-teams/static/js/runtime-main.ae6ea3d6.js",
+    "runtime-main.js.map": "/devsnest-teams/static/js/runtime-main.ae6ea3d6.js.map",
     "static/css/2.3f6a4e7d.chunk.css": "/devsnest-teams/static/css/2.3f6a4e7d.chunk.css",
-    "static/js/2.ff3b1d64.chunk.js": "/devsnest-teams/static/js/2.ff3b1d64.chunk.js",
-    "static/js/2.ff3b1d64.chunk.js.map": "/devsnest-teams/static/js/2.ff3b1d64.chunk.js.map",
-    "static/js/3.04f32517.chunk.js": "/devsnest-teams/static/js/3.04f32517.chunk.js",
-    "static/js/3.04f32517.chunk.js.map": "/devsnest-teams/static/js/3.04f32517.chunk.js.map",
+    "static/js/2.2646b9ff.chunk.js": "/devsnest-teams/static/js/2.2646b9ff.chunk.js",
+    "static/js/2.2646b9ff.chunk.js.map": "/devsnest-teams/static/js/2.2646b9ff.chunk.js.map",
+    "static/js/3.f95be914.chunk.js": "/devsnest-teams/static/js/3.f95be914.chunk.js",
+    "static/js/3.f95be914.chunk.js.map": "/devsnest-teams/static/js/3.f95be914.chunk.js.map",
     "index.html": "/devsnest-teams/index.html",
     "static/css/2.3f6a4e7d.chunk.css.map": "/devsnest-teams/static/css/2.3f6a4e7d.chunk.css.map",
-    "static/css/main.17c913b1.chunk.css.map": "/devsnest-teams/static/css/main.17c913b1.chunk.css.map",
-    "static/js/2.ff3b1d64.chunk.js.LICENSE.txt": "/devsnest-teams/static/js/2.ff3b1d64.chunk.js.LICENSE.txt",
-    "static/media/logo.c752fafb.jpg": "/devsnest-teams/static/media/logo.c752fafb.jpg"
+    "static/css/main.91d99f70.chunk.css.map": "/devsnest-teams/static/css/main.91d99f70.chunk.css.map",
+    "static/js/2.2646b9ff.chunk.js.LICENSE.txt": "/devsnest-teams/static/js/2.2646b9ff.chunk.js.LICENSE.txt",
+    "static/media/logo-t.8a6d9f13.png": "/devsnest-teams/static/media/logo-t.8a6d9f13.png",
+    "static/media/logo.c752fafb.jpg": "/devsnest-teams/static/media/logo.c752fafb.jpg",
+    "static/media/team.5342ef52.svg": "/devsnest-teams/static/media/team.5342ef52.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.1ce9cc51.js",
+    "static/js/runtime-main.ae6ea3d6.js",
     "static/css/2.3f6a4e7d.chunk.css",
-    "static/js/2.ff3b1d64.chunk.js",
-    "static/css/main.17c913b1.chunk.css",
-    "static/js/main.70213740.chunk.js"
+    "static/js/2.2646b9ff.chunk.js",
+    "static/css/main.91d99f70.chunk.css",
+    "static/js/main.2fa66936.chunk.js"
   ]
 }
