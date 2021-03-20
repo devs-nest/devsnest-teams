@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Admin from './components/Admin';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import Home from './components/Home';
 import Points from './components/Points';
 import SoftskillLeaderboard from './components/SoftskillLeaderboard';
 import SoftskillTeams from './components/SoftskillTeams';
@@ -18,6 +19,9 @@ function App() {
       <Router>
         <Header/>
         <Route exact path='/'>
+          <Home/>
+        </Route>
+        <Route exact path='/course_teams'>
           <TeamPage/>
         </Route>
         <Route exact path='/points'>

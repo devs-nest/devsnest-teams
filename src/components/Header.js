@@ -12,10 +12,10 @@ function Header() {
             </div>
             <div className={styles.right}>
                 <Link
-                    to="/points"
+                    to="/course_teams"
                     className={styles.item}
                 >
-                    Important Points
+                    Course Team
                 </Link>
                 <Link
                     to="/softskill_teams"

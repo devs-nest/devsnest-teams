@@ -1,26 +1,32 @@
 import React from 'react';
 import styles from '../styles/Footer.module.css';
 import { FaLink, FaDiscord, FaLinkedin, FaFacebookSquare, FaInstagramSquare, FaGithub } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 function Footer() {
     return (
         <div className={styles.Footer}>
-
+            <Link
+                to="/points"
+                className={styles.item}
+            >
+                Important Points
+            </Link>
             <div>
                 <Row link="https://www.devsnest.in">
-                    <FaLink size={35}/>
+                    <FaLink size={35} />
                 </Row>
                 <Row link="https://discord.gg/rGQCswxcx6">
-                    <FaDiscord size={35}/>
+                    <FaDiscord size={35} />
                 </Row>
                 <Row link="https://www.linkedin.com/company/devsnest/">
-                    <FaLinkedin size={35}/>
+                    <FaLinkedin size={35} />
                 </Row>
                 <Row link="https://www.facebook.com/devsnest/">
-                    <FaFacebookSquare size={35}/>
+                    <FaFacebookSquare size={35} />
                 </Row>
                 <Row link="https://www.instagram.com/devsnest.in/">
-                    <FaInstagramSquare size={35}/>
+                    <FaInstagramSquare size={35} />
                 </Row>
             </div>
 
@@ -30,14 +36,14 @@ function Footer() {
 
             <div className={styles.source_code}>
                 <a href="https://github.com/sanjay270899/devsnest-teams" target="_blank" rel="noopener noreferrer">
-                <FaGithub/>&nbsp;GitHub
+                    <FaGithub />&nbsp;GitHub
                 </a>
             </div>
         </div>
     )
 }
 
-function Row({children, link}) {
+function Row({ children, link }) {
     return (
         <a href={link} target="_blank" rel="noopener noreferrer" className={styles.row}>
             {children}
