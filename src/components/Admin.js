@@ -4,6 +4,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import urls from '../config.js';
 import { FaPlus, FaMinus } from 'react-icons/fa';
+import one from '../assets/login/1.jpg';
 
 function Admin() {
 
@@ -106,17 +107,22 @@ function Admin() {
 
     if(!isAuthenticated) {
         return (
-            <div className={styles.Admin}>
-                <div className={styles.title}>
-                    Softskill Admin Login
-                </div>
+            <div className={styles.Admin_login}>
+                <div className={styles.login_l}>
+                    <div className={styles.title}>
+                        Softskill Admin Login
+                    </div>
 
-                <div className={styles.login}>
-                    <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)}/>
-                    <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-                    <button onClick={() => checkAuthentication()}>Login</button>
+                    <div className={styles.login}>
+                        <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)}/>
+                        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                        <button onClick={() => checkAuthentication()}>Login</button>
+                    </div>
                 </div>
-            </div>
+                <div className={styles.login_r}>
+                    <img src={one} alt="One"/>
+                </div>
+                </div>
         )
     }
 
