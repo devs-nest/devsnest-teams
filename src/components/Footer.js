@@ -35,7 +35,7 @@ function Footer() {
             </div>
 
             <div className={styles.source_code}>
-                <a href="https://github.com/sanjay270899/devsnest-teams" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/devs-nest/devsnest-teams" target="_blank" rel="noopener noreferrer">
                     <FaGithub />&nbsp;GitHub
                 </a>
             </div>
