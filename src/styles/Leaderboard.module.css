@@ -98,6 +98,11 @@
     background-color: #dcd3ec;
 }
 
+.short_table button {
+    padding: 0.3rem 0.5rem;
+    margin: 0.5rem 0.3rem;
+}
+
 @media only screen and (max-width: 1000px) {
     .SoftskillLeaderboard {
         font-size: 0.9rem;

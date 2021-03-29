@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { useTable } from 'react-table';
+import { useTable, usePagination } from 'react-table';
 
 export const Table = ({
     DATA,
@@ -13,52 +13,72 @@ export const Table = ({
         getTableProps,
         getTableBodyProps,
         headerGroups,
-        rows,
-        prepareRow
-    } = useTable({
-        columns,
-        data
-    });
+        page,
+        nextPage,
+        previousPage,
+        canNextPage,
+        canPreviousPage,
+        pageOptions,
+        gotoPage,
+        pageCount,
+        state,
+        prepareRow,
+    } = useTable(
+        {
+            columns,
+            data
+        },
+        usePagination
+    );
+
+    const { pageIndex } = state;
 
     return (
-        <table {...getTableProps()}>
-            <thead>
-                {
-                    headerGroups.map((headerGroup) => (
-                        <tr {...headerGroup.getHeaderGroupProps()}>
-                            {
-                                headerGroup.headers.map((column) => (
-                                    <th {...column.getHeaderProps()}>
-                                        {
-                                            column.render('Header')
-                                        }
-                                    </th>
-                                ))
-                            }
-                        </tr>
-                    ))
-                }
-            </thead>
-            <tbody {...getTableBodyProps()}>
-                {
-                    rows.map((row) => {
-                        prepareRow(row);
-                        return (
-                            <tr {...row.getRowProps()}>
+        <>
+            <table {...getTableProps()}>
+                <thead>
+                    {
+                        headerGroups.map((headerGroup) => (
+                            <tr {...headerGroup.getHeaderGroupProps()}>
                                 {
-                                    row.cells.map((cell) => (
-                                        <td {...cell.getCellProps()}>
+                                    headerGroup.headers.map((column) => (
+                                        <th {...column.getHeaderProps()}>
                                             {
-                                                cell.render('Cell')
+                                                column.render('Header')
                                             }
-                                        </td>
+                                        </th>
                                     ))
                                 }
                             </tr>
-                        )
-                    })
-                }
-            </tbody>
-        </table>
+                        ))
+                    }
+                </thead>
+                <tbody {...getTableBodyProps()}>
+                    {
+                        page.map((row) => {
+                            prepareRow(row);
+                            return (
+                                <tr {...row.getRowProps()}>
+                                    {
+                                        row.cells.map((cell) => (
+                                            <td {...cell.getCellProps()}>
+                                                {
+                                                    cell.render('Cell')
+                                                }
+                                            </td>
+                                        ))
+                                    }
+                                </tr>
+                            )
+                        })
+                    }
+                </tbody>
+            </table>
+            <div>Page {pageIndex + 1} of {pageOptions.length}</div>
+            <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>{"<<"}</button>
+            <button onClick={() => previousPage()} disabled={!canPreviousPage}>{"<"}</button>
+            <button onClick={() => nextPage()} disabled={!canNextPage}>{">"}</button>
+            <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>{">>"}</button>
+        </>
     )
 }
