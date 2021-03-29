@@ -1,4 +1,4 @@
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Admin from "./components/Admin";
@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import Leaderboard from "./components/Leaderboard";
 import Teams from "./components/Teams";
+import UserDashboard from "./components/UserDashboard";
 
 function App() {
   toast.configure();
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route exact path="/admin">
             <Admin />
+          </Route>
+          <Route exact path="/user/:id">
+            <UserDashboard />
           </Route>
           <Route>
             <div style={{ height: "70vh", display: "flex", justifyContent: "center", alignItems: "center", fontSize: "2rem" }}>

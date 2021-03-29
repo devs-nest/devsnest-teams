@@ -1,0 +1,114 @@
+.UserDashboard {
+    background-color: #f2eff7;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    font-family: "Poppins";
+}
+
+.user_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgb(0 0 0 / 20%);
+    width: fit-content;
+    height: fit-content;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.user_card .card_head {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user_card .card_head img {
+    height: 55px;
+    width: 55px;
+    margin-right: 11px;
+}
+
+.user_card .card_body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.user_card .card_body img {
+    height: 120px;
+    width: 120px;
+    border-radius: 15px;
+}
+
+.user_card .username {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+.user_card .points {
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    padding: 0.3rem;
+    border-radius: 5px;
+    margin-left: 1.5rem;
+}
+
+.user_card .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    padding: 0.3rem;
+    border-bottom: 0.1px solid lightgray;
+}
+
+.user_card .total {
+    font-weight: bold;
+    border-top: 1px solid gray;
+}
+
+.UserDashboard button {
+    padding: 0.3rem;
+    margin-top: 1rem;
+}
+
+@media only screen and (max-width: 550px) {
+    .user_card {
+        padding: 0.7rem;
+        margin: 0.3rem;
+    }
+
+    .user_card .card_head img {
+        height: 50px;
+        width: 50px;
+    }
+
+    .user_card .card_head {
+        font-size: 1.1rem;
+    }
+
+    .user_card .card_body img {
+        height: 70px;
+        width: 70px;
+    }
+
+    .user_card .card_body .username {
+        font-size: 0.9rem;
+    }
+
+    .user_card .card_body .points .row {
+        font-size: 0.75rem;
+    }
+}

@@ -67,9 +67,13 @@ function SoftskillLeaderboard() {
             <div className={styles.title}>
                 {detailLeaderBoard && "Detailed "}Softskill Leaderboard
             </div>
-            <div className={styles.switch}>
-                <Switch onChange={(check) => setDetailLeaderBoard(check)} checked={detailLeaderBoard} onColor="#bbaad6" />
-            </div>
+            <Switch
+                onChange={(check) => setDetailLeaderBoard(check)}
+                checked={detailLeaderBoard}
+                onColor="#bbaad6"
+                height={20}
+                width={40}
+            />
             {
                 detailLeaderBoard ?
                     <>
