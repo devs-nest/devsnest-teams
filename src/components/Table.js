@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { useTable, usePagination } from 'react-table';
+import { useTable, usePagination, useGlobalFilter } from 'react-table';
 
 export const Table = ({
     DATA,
@@ -22,19 +22,26 @@ export const Table = ({
         gotoPage,
         pageCount,
         state,
+        setGlobalFilter,
         prepareRow,
     } = useTable(
         {
             columns,
             data
         },
-        usePagination
+        useGlobalFilter,
+        usePagination,
     );
 
-    const { pageIndex } = state;
+    const { pageIndex, globalFilter } = state;
 
     return (
         <>
+            <input type="text"
+                value={globalFilter || ""}
+                onChange={(e) => setGlobalFilter(e.target.value)}
+                placeholder="Search"
+            />
             <table {...getTableProps()}>
                 <thead>
                     {
@@ -58,7 +65,11 @@ export const Table = ({
                         page.map((row) => {
                             prepareRow(row);
                             return (
-                                <tr {...row.getRowProps()}>
+                                <tr {...row.getRowProps()}
+                                    onClick={() => {
+                                        window.open(`${window.location.origin}/user/${row.original._id}`);
+                                    }}
+                                >
                                     {
                                         row.cells.map((cell) => (
                                             <td {...cell.getCellProps()}>
