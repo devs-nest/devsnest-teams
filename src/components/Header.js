@@ -6,28 +6,21 @@ import { Link } from 'react-router-dom';
 function Header() {
     return (
         <div className={styles.Header}>
-            <div className={styles.left}>
-                <img src={logo} alt="Logo"/>
-                <Link className={styles.title} to='/'>Devsnest Teams</Link>
-            </div>
+            <Link className={styles.left} to='/'>
+                <img src={logo} alt="Logo" />
+            </Link>
             <div className={styles.right}>
                 <Link
-                    to="/course_teams"
+                    to="/teams"
                     className={styles.item}
                 >
-                    Course Team
+                    Teams
                 </Link>
                 <Link
-                    to="/softskill_teams"
+                    to="/leaderboard"
                     className={styles.item}
                 >
-                    Softskill Teams
-                </Link>
-                <Link
-                    to="/softskill_leaderboard"
-                    className={styles.item}
-                >
-                    Softskill Leaderboard
+                    Leaderboard
                 </Link>
             </div>
         </div>

@@ -11,23 +11,19 @@
     background-color: white;
     box-shadow: 3px 0 5px gray;
     color: #9c85d2;
+    z-index: 999;
 }
 
 .left {
     display: flex;
     align-items: center;
+    text-decoration: none;
+    color: inherit;
 }
 
 .Header img {
     width: 70px;
     margin: 0 1rem;
-}
-
-.Header .title {
-    font-size: 2rem;
-    font-weight: bold;
-    text-decoration: none;
-    color: inherit;
 }
 
 .Header .item {
@@ -38,7 +34,7 @@
     white-space: nowrap;
 }
 
-@media only screen and (max-width: 980px) {
+@media only screen and (max-width: 450px) {
     .Header {
         flex-direction: column;
         padding: 0.5rem;
@@ -53,7 +49,7 @@
     }
 }
 
-@media only screen and (max-width: 470px) {
+@media only screen and (max-width: 370px) {
     .Header .right {
         display: flex;
         flex-direction: column;
@@ -61,5 +57,9 @@
 
     .Header img {
         width: 50px;
+    }
+
+    .Header .item {
+        margin-left: 0;
     }
 }

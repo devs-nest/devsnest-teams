@@ -64,6 +64,40 @@
     font-weight: bold;
 }
 
+.short_table table{
+    margin: 1rem auto;
+    width: 80%;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgb(0 0 0 / 20%);
+}
+
+.short_table th {
+    background-color: #bbaad6;
+    color: white;
+    padding: 0.5rem;
+}
+
+.short_table thead tr th:first-child {
+    border-radius: 25px 0 0 0;
+}
+
+.short_table thead tr th:last-child {
+    border-radius: 0 25px 0 0;
+}
+
+.short_table tr:hover {
+    background-color: #d6c5ee !important;
+}
+
+.short_table tr td{
+    padding: 0.5rem;
+}
+
+.short_table tr:nth-child(even) {
+    background-color: #dcd3ec;
+}
+
 @media only screen and (max-width: 1000px) {
     .SoftskillLeaderboard {
         font-size: 0.9rem;
@@ -86,5 +120,10 @@
 
     .SoftskillLeaderboard {
         padding: 1rem 0.5rem;
+    }
+
+    .short_table table{
+        width: 100%;
+        font-size: 0.85rem;
     }
 }

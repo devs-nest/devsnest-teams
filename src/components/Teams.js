@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../styles/SoftskillTeams.module.css';
+import styles from '../styles/Teams.module.css';
 import data from '../assets/data/data2';
 
 function SoftskillTeams() {

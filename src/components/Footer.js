@@ -1,17 +1,10 @@
 import React from 'react';
 import styles from '../styles/Footer.module.css';
 import { FaLink, FaDiscord, FaLinkedin, FaFacebookSquare, FaInstagramSquare, FaGithub } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
 
 function Footer() {
     return (
         <div className={styles.Footer}>
-            <Link
-                to="/points"
-                className={styles.item}
-            >
-                Important Points
-            </Link>
             <div>
                 <Row link="https://www.devsnest.in">
                     <FaLink size={35} />
