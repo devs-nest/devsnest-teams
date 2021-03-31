@@ -21,15 +21,11 @@ function SoftskillLeaderboard() {
             try {
                 setIsLoading(true);
                 const { data } = await axios.get(urls.getUsers);
-                const arr = data.data;
-                setUsers(current => {
-                    arr.forEach((obj, i) => {
-                        obj.rank = i + 1;
-                    });
-                    return arr.sort((obj1, obj2) =>
-                        obj2.total - obj1.total
-                    )
-                });
+                setUsers(data.data.sort((obj1, obj2) =>
+                    obj2.total - obj1.total
+                ).map((obj, i) => {
+                    return { ...obj, rank: i + 1 };
+                }));
                 setIsLoading(false);
             } catch (error) {
                 if (error.response) {
