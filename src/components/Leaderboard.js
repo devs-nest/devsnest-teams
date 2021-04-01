@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import { toast } from 'react-toastify';
 import styles from '../styles/Leaderboard.module.css';
 import useCurrentWidth from '../utils/useCurrentWidth.js';
 import Switch from 'react-switch';
-import urls from '../config.js';
 import { Table } from './Table';
 import { COLUMNS } from "./columns";
+import { db } from '../utils/firebaseConfig';
 
 function SoftskillLeaderboard() {
 
@@ -20,8 +19,24 @@ function SoftskillLeaderboard() {
         async function fetchData() {
             try {
                 setIsLoading(true);
-                const { data } = await axios.get(urls.getUsers);
-                setUsers(data.data.sort((obj1, obj2) =>
+                const snapshot = await db.collection("users").get();
+                let arr = [];
+                snapshot.forEach(child => {
+                    arr.push({
+                        id: child.id,
+                        isLeader: false,
+                        debate: child.data().debate,
+                        mockInterviewI: child.data().mockInterviewI,
+                        mockInterviewP: child.data().mockInterviewP,
+                        presentation: child.data().presentation,
+                        summarization: child.data().summarization,
+                        teamID: child.data().teamID,
+                        techsummarization: child.data().techsummarization,
+                        total: child.data().total,
+                        username: child.data().username,
+                    });
+                });
+                setUsers(arr.sort((obj1, obj2) =>
                     obj2.total - obj1.total
                 ).map((obj, i) => {
                     return { ...obj, rank: i + 1 };
