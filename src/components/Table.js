@@ -67,7 +67,7 @@ export const Table = ({
                             return (
                                 <tr {...row.getRowProps()}
                                     onClick={() => {
-                                        window.open(`${window.location.origin}/user/${row.original._id}`);
+                                        window.open(`${window.location.origin}/user/${row.original.id}`);
                                     }}
                                 >
                                     {

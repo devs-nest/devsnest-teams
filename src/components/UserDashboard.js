@@ -1,26 +1,37 @@
 import React, { useEffect, useRef, useState } from "react";
-import axios from "axios";
 import { useParams } from "react-router-dom";
-import urls from "../config";
 import { toast } from "react-toastify";
 import domtoimage from "dom-to-image";
 import styles from "../styles/UserDashboard.module.css";
 import Logo from "../assets/logo.jpg";
 import defaultProfile from "../assets/defaultProfile.jpg";
+import { db } from "../utils/firebaseConfig";
+import { useAuth } from "../contexts/AuthContext";
 
 function UserDashboard() {
 
     const params = useParams();
+    const userDB = db.collection("users").doc(params.id);
+    const { authUser } = useAuth();
+
     const [isLoading, setIsLoading] = useState(false);
     const [user, setUser] = useState(null);
     const userCardRef = useRef(null);
+
+    const [type, setType] = useState("debate");
+    const [points, setPoints] = useState(1);
+    const [buttonLoading, setButtonLoading] = useState(false);
 
     useEffect(() => {
         async function fetchUser() {
             try {
                 setIsLoading(true);
-                const { data } = await axios.get(`${urls.getUser}/${params.id}`);
-                setUser(data.data);
+                const user = await userDB.get();
+                if (user.exists) {
+                    setUser(user.data());
+                } else {
+                    toast.error("Invalid User ID");
+                }
                 setIsLoading(false);
             } catch (error) {
                 if (error.response) {
@@ -38,12 +49,30 @@ function UserDashboard() {
         fetchUser();
     }, [params]);
 
-    if (isLoading) {
-        return (
-            <div className={styles.UserDashboard}>
-                Loading...
-            </div>
-        )
+    async function updatePoints(sign) {
+        try {
+            setButtonLoading(true);
+            const newPoints = user[type] + points * sign;
+            const total = user.debate + user.mockInterviewI + user.mockInterviewP + user.summarization + user.techsummarization + user.presentation + points * sign;
+            await userDB.update({
+                [type]: newPoints,
+                total,
+            });
+            setButtonLoading(false);
+            toast.success("Points Updated");
+            setUser({ ...user, total, [type]: newPoints });
+        } catch (error) {
+            if (error.response) {
+                toast.error(error.response.data.message);
+            } else if (error.request) {
+                toast.error("Server is not Responding!");
+                // console.log(error.request);
+            } else {
+                toast.error(error.message);
+                // console.log(error.message);
+            }
+            setButtonLoading(false);
+        }
     }
 
     function downloadUserCard() {
@@ -53,6 +82,14 @@ function UserDashboard() {
             link.href = dataURL;
             link.click();
         }).catch(err => console.log(err));
+    }
+
+    if (isLoading) {
+        return (
+            <div className={styles.UserDashboard}>
+                Loading...
+            </div>
+        )
     }
 
     return (
@@ -70,7 +107,7 @@ function UserDashboard() {
                                     <div>
                                         <img src={defaultProfile} alt="User" />
                                         <div className={styles.username}>{user.username}</div>
-                                        <div>Member</div>
+                                        <div>{`${user.isLeader ? "Leader" : "Member"} of Team ${user.teamID}`}</div>
                                     </div>
                                     <div className={styles.points}>
                                         <div className={styles.row}><span>Debate</span><span style={{ paddingLeft: "15px" }}>{user.debate}</span></div>
@@ -84,6 +121,38 @@ function UserDashboard() {
                                 </div>
                             </div>
                         </div>
+
+                        {
+                            authUser &&
+                            <div className={styles.user_update_score}>
+                                <select value={type} onChange={(e) => setType(e.target.value)}>
+                                    <option value="debate">Debate</option>
+                                    <option value="mockInterviewI">Mock Interview I</option>
+                                    <option value="mockInterviewP">Mock Interview P</option>
+                                    <option value="summarization">Summarzation</option>
+                                    <option value="techsummarization">Tech Summarization</option>
+                                    <option value="presentation">Presentation</option>
+                                </select>
+
+                                <select value={points} onChange={(e) => setPoints(e.target.value)}>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                                <div>
+                                    <button onClick={() => updatePoints(1)} disabled={buttonLoading}>Add</button>
+                                    <button onClick={() => updatePoints(-1)} disabled={buttonLoading}>Sub</button>
+                                </div>
+                            </div>
+                        }
+
                         <button onClick={() => downloadUserCard()}>Download Card</button>
                     </>
                     :
