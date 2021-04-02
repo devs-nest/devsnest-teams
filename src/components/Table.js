@@ -42,6 +42,7 @@ export const Table = ({
                 onChange={(e) => setGlobalFilter(e.target.value)}
                 placeholder="Search"
             />
+            <p style={{ fontSize: "0.9rem", marginTop: "0.5rem" }}>Click on name to view and download Profile Card.</p>
             <table {...getTableProps()}>
                 <thead>
                     {
