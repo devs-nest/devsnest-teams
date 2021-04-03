@@ -10,7 +10,7 @@ function Admin() {
     const [isLoading, setIsLoading] = useState(false);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const { login, authUser } = useAuth();
+    const { login, authUser, logout } = useAuth();
     const history = useHistory();
 
     async function checkAuthentication() {
@@ -42,6 +42,14 @@ function Admin() {
         )
     }
 
+    async function handleLogout() {
+        try {
+            await logout();
+        } catch(error) {
+            toast.error("Error in logging out!")
+        }
+    }
+
     return (
         <div className={styles.Admin_login}>
             <div className={styles.login_l}>
@@ -50,6 +58,10 @@ function Admin() {
                         authUser ? `Welcome ${authUser.email}` : "Softskill Admin Login"
                     }
                 </div>
+                {
+                    authUser &&
+                    <button style={{marginTop: "1rem", padding: "0.5rem", fontSize: "1rem"}} onClick={() => handleLogout()}>Logout</button>
+                }
                 {
                     !authUser &&
                     <div className={styles.login}>
