@@ -4,7 +4,6 @@ import { toast } from "react-toastify";
 import domtoimage from "dom-to-image";
 import styles from "../styles/UserDashboard.module.css";
 import Logo from "../assets/logo.jpg";
-import defaultProfile from "../assets/defaultProfile.jpg";
 import { db } from "../utils/firebaseConfig";
 import { useAuth } from "../contexts/AuthContext";
 
@@ -105,7 +104,10 @@ function UserDashboard() {
                             </div>
                                 <div className={styles.card_body}>
                                     <div>
-                                        <img src={defaultProfile} alt="User" />
+                                        <div className={styles.img}>
+                                            {user.username[0].toUpperCase()}
+                                        </div>
+                                        {/* <img src={defaultProfile} alt="User" /> */}
                                         <div className={styles.username}>{user.username}</div>
                                         <div>{`${user.isLeader ? "Leader" : "Member"} of Team ${user.teamID}`}</div>
                                     </div>
