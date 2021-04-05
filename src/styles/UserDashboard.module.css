@@ -44,10 +44,18 @@
     margin-top: 1rem;
 }
 
-.user_card .card_body img {
+.user_card .card_body .img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 120px;
     width: 120px;
     border-radius: 15px;
+    font-size: 5rem;
+    margin: auto;
+    background-color: #8367c7;
+    color: white;
+    font-family: Cursive;
 }
 
 .user_card .username {
