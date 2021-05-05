@@ -51,15 +51,24 @@ function UserDashboard() {
     async function updatePoints(sign) {
         try {
             setButtonLoading(true);
-            const newPoints = user[type] + points * sign;
-            const total = user.debate + user.mockInterviewI + user.mockInterviewP + user.summarization + user.techsummarization + user.presentation + points * sign;
-            await userDB.update({
-                [type]: newPoints,
-                total,
-            });
+            if(type === "attendance") {
+                const newAttendance = user.attendance + points * sign;
+                await userDB.update({
+                    attendance: newAttendance,
+                });
+                toast.success("Attendance Updated");
+                setUser({ ...user, [type]: newAttendance });
+            } else {
+                const newPoints = user[type] + points * sign;
+                const total = user.debate + user.mockInterviewI + user.mockInterviewP + user.summarization + user.techsummarization + user.presentation + points * sign;
+                await userDB.update({
+                    [type]: newPoints,
+                    total,
+                });
+                toast.success("Points Updated");
+                setUser({ ...user, total, [type]: newPoints });
+            }
             setButtonLoading(false);
-            toast.success("Points Updated");
-            setUser({ ...user, total, [type]: newPoints });
         } catch (error) {
             if (error.response) {
                 toast.error(error.response.data.message);
@@ -121,6 +130,9 @@ function UserDashboard() {
                                         <div className={`${styles.row} ${styles.total}`}><span>Total</span><span style={{ paddingLeft: "15px" }}>{user.total}</span></div>
                                     </div>
                                 </div>
+                                <div style={{paddingTop: "1rem"}}>
+                                    Total number of English VC attended: {user.attendance? user.attendance: 0}
+                                </div>
                             </div>
                         </div>
 
@@ -134,6 +146,7 @@ function UserDashboard() {
                                     <option value="summarization">Summarzation</option>
                                     <option value="techsummarization">Tech Summarization</option>
                                     <option value="presentation">Presentation</option>
+                                    <option value="attendance">Attendance</option>
                                 </select>
 
                                 <select value={points} onChange={(e) => setPoints(e.target.value)}>
